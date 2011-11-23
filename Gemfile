@@ -25,6 +25,8 @@ gem 'haml-rails'
 gem 'omniauth'
 gem 'omniauth-twitter'
 
+gem 'octokit'
+
 group :test do
   gem 'turn', '0.8.2', :require => false
 end
