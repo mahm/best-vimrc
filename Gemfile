@@ -26,6 +26,7 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'rails-backbone'
 gem 'octokit'
+gem "haml_assets", git: "git://github.com/christopherhein/haml_assets.git", branch: "develop"
 
 group :test do
   gem 'turn', '0.8.2', :require => false

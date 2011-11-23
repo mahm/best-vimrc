@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/christopherhein/haml_assets.git
+  revision: 4eac034a7749e246c5335d76d19675900984c393
+  branch: develop
+  specs:
+    haml_assets (0.0.3)
+      haml
+      tilt
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -176,6 +185,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.1.1)
   haml-rails
+  haml_assets!
   heroku_san
   jquery-rails
   octokit
