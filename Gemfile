@@ -10,6 +10,7 @@ gem 'sqlite3'
 # for heroku deploy
 gem 'therubyracer-heroku'
 gem 'pg'
+gem 'heroku_san', :group => :development
 
 # Gems used only for assets and not required
 # in production environments by default.
