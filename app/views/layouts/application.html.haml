@@ -8,5 +8,14 @@
   %body
     .container
       .content
+        - if flash[:notice]
+          .alert-message.error= flash[:notice]
+
+        - if current_user
+          = link_to "hello! current_user.name!", signout_path
+        - else
+          = link_to(image_tag("social-connect.png"), "/auth/twitter")
         = yield
 
+    #dialog{:title => "test dialog"}
+      %p You need sign in with twitter before vote this vimrc.

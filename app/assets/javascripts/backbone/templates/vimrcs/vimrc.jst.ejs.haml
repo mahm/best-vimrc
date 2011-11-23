@@ -1,11 +1,12 @@
-.vimrc.row
-  .vote-area.span2
-    .button.vote 0<br />votes
-  .desc-area.span8
-    %h2
-      %a{:href => "<%= url %>"}
-        <%= username %> / <%= name %>
-    %p watchers: <%= watchers %> / forks: <%= forks %> / pushed at: <%= repos_pushed_at %><br /><%= description %>
+<div class="vimrc row" id="<%= id %>">
+.vote-area.span2
+  .button.vote <%= vote_count %><br />votes
+.desc-area.span8
+  %h2
+    %a{:href => "<%= url %>"}
+      <%= username %> / <%= name %>
+  %p watchers: <%= watchers %> / forks: <%= forks %> / pushed at: <%= repos_pushed_at %><br /><%= description %>
+</div>
 
 -# <%= vote_count %>
 -# <%= url %>

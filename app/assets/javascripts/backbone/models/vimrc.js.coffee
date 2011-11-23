@@ -13,7 +13,7 @@ class BestVimrc.Models.Vimrc extends Backbone.Model
     forks: null
     repos_created_at: null
     repos_pushed_at: null
-  
+
 class BestVimrc.Collections.VimrcsCollection extends Backbone.Collection
   model: BestVimrc.Models.Vimrc
   url: '/vimrcs'
