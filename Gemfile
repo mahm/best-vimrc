@@ -24,7 +24,7 @@ gem 'jquery-rails'
 gem 'haml-rails'
 gem 'omniauth'
 gem 'omniauth-twitter'
-
+gem 'rails-backbone'
 gem 'octokit'
 
 group :test do

@@ -1,0 +1,11 @@
+%h1 best vimrc
+
+#vimrcs
+
+
+:javascript
+  $(function() {
+    window.router = new BestVimrc.Routers.VimrcsRouter({vimrcs: #{@vimrcs.to_json.html_safe}});
+    Backbone.history.start();
+  });
+
