@@ -16,7 +16,15 @@ class BestVimrc.Views.Vimrcs.IndexView extends Backbone.View
     @$("#vimrcs-list").append(view.render().el)
 
   render: ->
-    $(@el).html(@template(vimrcs: @options.vimrcs.toJSON() ))
+    $(@el).html(@template(vimrcs: @options.vimrcs.toJSON() )).fadeIn(3000)
     @addAll()
 
     return this
+
+  changeTabToPushedAt: ->
+    $("li#pushed-at").addClass("active")
+    $("li#score").removeClass("active")
+
+  changeTabToScore: ->
+    $("li#pushed-at").removeClass("active")
+    $("li#score").addClass("active")

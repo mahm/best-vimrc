@@ -2,7 +2,18 @@ class VimrcsController < ApplicationController
   before_filter :authorized?, :only => :update
 
   def index
-    @vimrcs = Repository.display_order_by_score
+    sort_type = params[:sort]
+    if sort_type.nil? || sort_type == "score"
+      @vimrcs = Repository.display_order_by_score
+    elsif sort_type == "pushed-at"
+      @vimrcs = Repository.display_order_by_pushed_at
+    else
+      @vimrcs = Repository.display_order_by_score
+    end
+    respond_to do |format|
+        format.html
+        format.json { render json: @vimrcs }
+    end
   end
 
   def update

@@ -17,3 +17,14 @@ class BestVimrc.Models.Vimrc extends Backbone.Model
 class BestVimrc.Collections.VimrcsCollection extends Backbone.Collection
   model: BestVimrc.Models.Vimrc
   url: '/vimrcs'
+
+  setSortType: (type) ->
+    switch type
+      when "score"
+        @url = '/vimrcs?sort=score'
+      when "pushed-at"
+        @url = '/vimrcs?sort=pushed-at'
+    @reset(null, {silent: true})
+    @fetch()
+
+

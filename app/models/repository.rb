@@ -5,6 +5,10 @@ class Repository < ActiveRecord::Base
     self.order("score DESC").all
   end
 
+  def self.display_order_by_pushed_at
+    self.order("repos_pushed_at DESC, score DESC").all
+  end
+
   def vote(user)
     return nil unless user
     self.vote_count = self.votes.count + 1
