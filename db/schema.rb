@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111123080921) do
+ActiveRecord::Schema.define(:version => 20111124021318) do
 
   create_table "repositories", :force => true do |t|
     t.string   "url"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(:version => 20111123080921) do
     t.date     "repos_pushed_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "vote_count",       :default => 0
+    t.integer  "score"
   end
 
   create_table "users", :force => true do |t|

@@ -13,4 +13,8 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore env setting files.
 .powenv
+/config/heroku.yml
+
