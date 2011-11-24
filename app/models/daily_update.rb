@@ -16,6 +16,8 @@ module DailyUpdate
         rec.forks            = repo[:forks]
         rec.repos_created_at = repo[:created_at]
         rec.repos_pushed_at  = repo[:pushed_at]
+        rec.vote_count       = rec.votes.count
+        rec.score            = rec.culc_score
         rec.save
       end
     end
