@@ -9,12 +9,22 @@
     .container
       .content
         - if flash[:notice]
-          .alert-message.error= flash[:notice]
+          .alert-message.info.fade.in{"data-alert" => "alert"}
+            %a.close{:href => "#"}x
+            %p= flash[:notice]
+        .row
+          .span10
+            %h1
+              best vimrc
+              %small
+                voting the best vimrc
+          .span4{:style => "text-align:right; border: 0"}
+            - if current_user
+              = image_tag current_user.profile_image, :size => "32x32"
+              = link_to "sign out", signout_path
+            - else
+              = link_to(image_tag("social-connect.png"), "/auth/twitter")
 
-        - if current_user
-          = link_to "hello! current_user.name!", signout_path
-        - else
-          = link_to(image_tag("social-connect.png"), "/auth/twitter")
         = yield
 
     #unauthorized-dialog{:title => "HOW TO VOTE THIS VIMRC?", :style => "display: none;"}

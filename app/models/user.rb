@@ -6,4 +6,9 @@ class User < ActiveRecord::Base
     new_user.save!
     new_user
   end
+
+  def profile_image
+    auth = YAML::load(self.auth)
+    auth["info"]["image"]
+  end
 end
