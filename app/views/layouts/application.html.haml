@@ -17,5 +17,11 @@
           = link_to(image_tag("social-connect.png"), "/auth/twitter")
         = yield
 
-    #dialog{:title => "test dialog"}
+    #unauthorized-dialog{:title => "HOW TO VOTE THIS VIMRC?", :style => "display: none;"}
       %p You need sign in with twitter before vote this vimrc.
+
+    #onlyonetime-dialog{:title => "YOU CAN VOTE 1 TIME EACH VIMRC", :style => "display: none;"}
+      %p Sorry, you can vote 1 time each vimrc.
+
+    #unprocessed-dialog{:title => "SOMETHING HAPPEN...", :style => "display: none;"}
+      %p OMG, something is happening now.

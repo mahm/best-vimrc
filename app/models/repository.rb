@@ -13,6 +13,10 @@ class Repository < ActiveRecord::Base
     self
   end
 
+  def voted?(user)
+    self.votes.find_by_user_id(user) ? true : false
+  end
+
   def culc_score
     (self.vote_count * 5) + self.watchers + self.forks
   end
