@@ -26,5 +26,6 @@ class BestVimrc.Collections.VimrcsCollection extends Backbone.Collection
         @url = '/vimrcs?sort=pushed-at'
     @reset(null, {silent: true})
     @fetch()
+    @url = '/vimrcs'
 
 

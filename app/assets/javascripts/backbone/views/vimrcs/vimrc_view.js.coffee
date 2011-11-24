@@ -11,7 +11,6 @@ class BestVimrc.Views.Vimrcs.VimrcView extends Backbone.View
   vote: ->
     @model.save(null,
       success: (vimrc) =>
-        # @model.attributes.vote_count += 1
         $("#{@model.id}").html(@render())
 
       error: (vimrc, jqXHR) =>

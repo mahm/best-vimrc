@@ -8,7 +8,6 @@ class BestVimrc.Routers.VimrcsRouter extends Backbone.Router
     "/:id/edit"        : "edit"
     "/:id"             : "show"
     ".*"               : "index"
-    # "/index/score"     : "indexByScore"
     "/index/pushed-at" : "indexByPushedAt"
 
   index: ->
