@@ -1,39 +1,19 @@
 class Repository < ActiveRecord::Base
   has_many :votes
 
-  def self.display_with_vote_count
-    sql = <<-EOS
-      SELECT repositories.id
-      ,      COUNT(votes.id) AS vote_count
-      ,      url
-      ,      username
-      ,      homepage
-      ,      name
-      ,      description
-      ,      watchers
-      ,      followers
-      ,      forks
-      ,      repos_created_at
-      ,      repos_pushed_at
-      FROM   repositories LEFT OUTER JOIN votes
-             ON repositories.id = votes.repository_id
-      GROUP BY  url
-      ,      username
-      ,      homepage
-      ,      name
-      ,      description
-      ,      watchers
-      ,      followers
-      ,      forks
-      ,      repos_created_at
-      ,      repos_pushed_at
-    EOS
-    self.find_by_sql(sql)
+  def self.display_order_by_score
+    self.order("score DESC").all
   end
 
   def vote(user)
     return nil unless user
-    self.votes.build
+    self.vote_count = self.votes.count + 1
+    self.score = self.culc_score
+    self.votes.build(:user_id => user.id)
     self
+  end
+
+  def culc_score
+    (self.vote_count * 5) + self.watchers + self.forks
   end
 end
